@@ -1,7 +1,7 @@
 # README
 This is a project to research and showcase my learning of neural networks. 
 
-This README goes through the background learning process i went through, and then the final product i built [insert explanation]
+This README goes through the background learning process i went through, and then the final product i built <ins>**[insert explanation]**</ins>
 
 ## Background Knowledge 
 - Firstly, i brushged up my knowledge on Deep Neural Networks and Tensor Data Processing 
@@ -20,7 +20,14 @@ Here are some resources i found interesting and helpful to the creation of this 
 
 ## Building Process
 - Step 1 — Set Up Google Colab
-- Step 2 — Build the Model (Task 1)
-- Step 3 — Write the Training Loop (Task 2)
-- Step 4 — Train All 3 Models (Task 3)
-- Step 5 — Write the PDF Report (Tasks 3-5)
+- Step 2 — Build the Model
+    - **Encoder: Input** (one x,y pair) -> a couple hidden layers -> **Output** (r vector)
+    - Take the average of all r vectors from N observed points into one r_O
+    - **Decoder: Input** (concatentate r_O with an x_t value) -> few hidden layers (same hidden dim) -> **Output:** a single predicted y value
+- Step 3 — Write the **Training Loop**
+    - **Loss Function** (Use **MSE** - Mean Squared Error) -> **Optimiser** (Adam) -> <ins>during each training step randomly sample N observed points from each function to create context, then output remaining points</ins>
+- Step 4 — Train All 3 Models
+    - Train Models 2, 4, and 8. Keeping everything the same but <ins>Changing the **r_dim**</ins>
+- Step 5 — Analysis
+    - Anal;ysis of plotting r_dim vs test error
+    - Computing a correlation matrix of the latent dimensions
