@@ -1,0 +1,1 @@
+This is a project to research and showcase my learning of neural networks
