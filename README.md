@@ -1,5 +1,5 @@
 # README
-This is a project to research and showcase my learning of neural networks. 
+This is a project to showcase my learning & research of neural networks. 
 
 This README goes through the background learning process i went through, and then the final product i built:
 An encoder & decoder neural network that learns to reconstruct unseen parts of a curve from a small observed subset, then comparing different latent sizes **r<sub>dim</sub>=2, 3, 4**
