@@ -1,8 +1,21 @@
 # README
-This is a project to showcase my learning & research of neural networks. 
+## Conditional Neural Process from scratch in PyTorch
+This project documents my learning journey from the foundations of neural networks through to implementing a **Conditional Neural Process (CNP)** — a research-level meta-learning architecture first introduced by DeepMind in 2018.
 
-This README goes through the background learning process i went through, and then the final product i built:
-An encoder & decoder neural network that learns to reconstruct unseen parts of a curve from a small observed subset, then comparing different latent sizes **r<sub>dim</sub>=2, 3, 4**
+This README goes through the background theory I learned, and then the final product i built: a PyTorch implementation of a **CNP** that learns to reconstruct unseen parts of a curve from a small observed subset. Then generalises that ability to entirely new, unseen functions at inference time.
+
+I also did research and analysis by comparing different latent sizes **r<sub>dim</sub>=2, 4, 8.** and talked through my findings.
+
+# What I Built
+A **Conditional Neural Process** — unlike a standard neural network that learns one fixed mapping, 
+this model learns a *distribution over functions*: given just a handful of observed points from a 
+new function, it infers the full curve everywhere else.
+
+Built entirely from scratch in raw PyTorch, with no high level wrappers:
+
+- **Encoder MLP** — compresses sparse observed `(x, y)` pairs into a latent representation `r`
+- **Decoder MLP** — takes `r` and a target `x` to predict the corresponding `y`
+- **Custom training loop** — full manual implementation including loss, optimiser, and batching
 
 ## Background Knowledge 
 - Firstly, i brushged up my knowledge on Deep Neural Networks and Tensor Data Processing 
@@ -30,8 +43,6 @@ Here are some resources i found interesting and helpful to the creation of this 
 - Step 4 — Train All 3 Models
     - Train Models 2, 4, and 8. Keeping everything the same but <ins>Changing the **r_dim**</ins>
 - Step 5 — Analysis
-    - Anal;ysis of plotting r_dim vs test error
+    - Analysis of plotting r_dim vs test error
     - Computing a correlation matrix of the latent dimensions
 
-## Product
-**[write a little explanation of what the final product is]**
